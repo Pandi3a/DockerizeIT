@@ -54,14 +54,23 @@ while option:
     elif option == "4":
      ad=raw_input("Now Add your script to Dockerfile: ")
      os.system("echo " + "ADD " + ad + " /" + ">> " + folder + "/" + doc)
-
+     print("\n Procede with step 5 ")
 
     elif option == "5":
-     print("Example: CMD1:python | CMD2: ./script.py")
+     print("Write your text with quotes!!!")
+     print("Example: CMD1: python | CMD2: ./script.py ")
      cm1 = raw_input("CMD1 : ")
      cm2 = raw_input("CMD2 : ")
-     os.system("echo " + "CMD [" + '"' + cm1 +'"' + ", " + '"' + cm2 + '"' + "] " + ">> " + folder + "/" + doc)
+     file = open(folder + "/" + doc , "a")
+     file.write("CMD [" + cm1 + ", " +  cm2 + "]")
+     file.close()
+
+
+
+     # os.system("echo " + "CMD [" + '"' + cm1 +'"' + ", " + '"' + cm2 + '"' + "] " + ">> " + folder + "/" + doc)
      print("\n Done Ready to be Built ")
+     print("\n Procede with step 6 ")
+
 
     elif option == "6":
       bd = raw_input("Type name of Docker Image: ")
